@@ -1,0 +1,151 @@
+/* ============================================================
+   컨설팅 신청 관리 시스템 CSS
+   ============================================================ */
+
+/* ── 공통 레이아웃 ─────────────────────────────────────── */
+.cons-wrap        { max-width:1100px; margin:0 auto; padding:24px 16px; }
+.cons-section     { margin-bottom:40px; }
+.cons-section-title {
+    font-size:20px; font-weight:700; color:#222;
+    border-bottom:2px solid #4a6fd4; padding-bottom:8px; margin-bottom:20px;
+}
+
+/* ── 시간대 카드 그리드 ────────────────────────────────── */
+.cons-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap:16px;
+}
+.cons-card {
+    background:#fff;
+    border:1px solid #e0e4ed;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    transition:box-shadow .2s;
+}
+.cons-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.12); }
+
+.cons-card-header {
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:12px;
+}
+.cons-card-round  { font-size:18px; font-weight:700; color:#4a6fd4; }
+.cons-card-time   { font-size:13px; color:#888; }
+.cons-card-type   {
+    font-size:11px; font-weight:700; padding:3px 8px;
+    border-radius:12px; background:#e8eaf6; color:#3949ab;
+}
+
+.cons-progress    { margin:10px 0; }
+.cons-progress-bar {
+    height:8px; background:#e8eaf6; border-radius:4px; overflow:hidden;
+}
+.cons-progress-fill {
+    height:100%; background:#4a6fd4; border-radius:4px;
+    transition:width .3s;
+}
+.cons-progress-fill.full   { background:#e53935; }
+.cons-progress-fill.almost { background:#fb8c00; }
+
+.cons-count-text  { font-size:13px; color:#555; margin-top:6px; }
+.cons-wait-text   { font-size:12px; color:#fb8c00; }
+
+/* ── 상태 배지 ─────────────────────────────────────────── */
+.cons-badge {
+    display:inline-block; font-size:11px; font-weight:700;
+    padding:3px 10px; border-radius:12px;
+}
+.cons-badge-open      { background:#e8f5e9; color:#2e7d32; }
+.cons-badge-wait      { background:#fff3e0; color:#e65100; }
+.cons-badge-full      { background:#fce4ec; color:#c62828; }
+.cons-badge-confirmed { background:#e8f5e9; color:#2e7d32; }
+.cons-badge-waiting   { background:#fff3e0; color:#e65100; }
+.cons-badge-cancelled { background:#fce4ec; color:#c62828; }
+.cons-badge-completed { background:#e3f2fd; color:#1565c0; }
+
+/* ── 신청 버튼 ─────────────────────────────────────────── */
+.cons-btn {
+    display:block; width:100%; padding:10px;
+    border:none; border-radius:6px; font-size:14px; font-weight:600;
+    cursor:pointer; text-align:center; text-decoration:none;
+    margin-top:14px; transition:background .2s;
+}
+.cons-btn-primary { background:#4a6fd4; color:#fff; }
+.cons-btn-primary:hover { background:#3a5fc4; color:#fff; }
+.cons-btn-warning { background:#fb8c00; color:#fff; }
+.cons-btn-warning:hover { background:#e65100; color:#fff; }
+.cons-btn-disabled {
+    background:#e0e0e0; color:#aaa; cursor:not-allowed;
+    pointer-events:none;
+}
+
+/* ── 탭 (중등/고등 선택) ───────────────────────────────── */
+.cons-tabs { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+.cons-tab {
+    padding:8px 24px; border:2px solid #4a6fd4; border-radius:20px;
+    font-size:14px; font-weight:600; cursor:pointer;
+    color:#4a6fd4; background:#fff; text-decoration:none;
+    transition:all .2s;
+}
+.cons-tab.active, .cons-tab:hover {
+    background:#4a6fd4; color:#fff;
+}
+
+/* ── 신청 폼 ────────────────────────────────────────────── */
+.cons-form         { max-width:600px; }
+.cons-form-group   { margin-bottom:18px; }
+.cons-form-label   { display:block; font-size:13px; font-weight:600; color:#444; margin-bottom:6px; }
+.cons-form-label .req { color:#e53935; margin-left:3px; }
+.cons-form-input,
+.cons-form-select,
+.cons-form-textarea {
+    width:100%; padding:10px 12px;
+    border:1px solid #ccc; border-radius:6px;
+    font-size:14px; color:#333; box-sizing:border-box;
+    transition:border-color .2s;
+}
+.cons-form-input:focus,
+.cons-form-select:focus,
+.cons-form-textarea:focus {
+    outline:none; border-color:#4a6fd4; box-shadow:0 0 0 3px rgba(74,111,212,.12);
+}
+.cons-form-textarea { resize:vertical; min-height:100px; }
+.cons-form-hint     { font-size:12px; color:#888; margin-top:4px; }
+.cons-form-error    { font-size:12px; color:#e53935; margin-top:4px; }
+
+/* ── 마이페이지 ─────────────────────────────────────────── */
+.cons-my-card {
+    background:#fff; border:1px solid #e0e4ed; border-radius:10px;
+    padding:20px; margin-bottom:16px;
+}
+.cons-my-card-header {
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid #eee;
+}
+.cons-my-title    { font-size:16px; font-weight:700; color:#333; }
+.cons-my-row      { display:flex; gap:8px; margin-bottom:6px; font-size:14px; }
+.cons-my-label    { color:#888; min-width:90px; }
+.cons-my-value    { color:#333; font-weight:500; }
+.cons-my-booth    {
+    font-size:28px; font-weight:900; color:#4a6fd4;
+    text-align:center; padding:16px; background:#f0f4ff;
+    border-radius:8px; margin-top:12px;
+}
+
+/* ── 알림 박스 ──────────────────────────────────────────── */
+.cons-alert {
+    padding:14px 18px; border-radius:8px; font-size:14px; margin-bottom:16px;
+}
+.cons-alert-info    { background:#e3f2fd; color:#1565c0; border:1px solid #90caf9; }
+.cons-alert-success { background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7; }
+.cons-alert-warning { background:#fff3e0; color:#e65100; border:1px solid #ffcc80; }
+.cons-alert-danger  { background:#fce4ec; color:#c62828; border:1px solid #f48fb1; }
+
+/* ── 반응형 ─────────────────────────────────────────────── */
+@media (max-width:600px) {
+    .cons-grid { grid-template-columns:1fr; }
+    .cons-tabs  { gap:6px; }
+    .cons-tab   { padding:7px 16px; font-size:13px; }
+    .cons-my-row { flex-direction:column; gap:2px; }
+}
